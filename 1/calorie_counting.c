@@ -47,6 +47,7 @@ int main(int argc, char *argv[]) {
         }
     }
 
+    free(line);
     // Close the input file
     fclose(input);
 

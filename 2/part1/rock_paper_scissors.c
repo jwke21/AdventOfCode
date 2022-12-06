@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include <stdio.h>
 
 #define ROCK_PTS 1
@@ -35,6 +36,7 @@ int main(int argc, char *argv[]) {
         total_score += get_round_score(line[0], line[2]); 
     }
 
+    free(line);
     fclose(input);
 
     printf("Total score is: %d\n", total_score);

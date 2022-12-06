@@ -50,6 +50,7 @@ int main(int argc, char *argv[]) {
         }
     }
 
+    free(line);
     fclose(input);
 
     printf("Number of pairs where one contains the other: %d\n", contains);

@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
@@ -34,7 +35,7 @@ int main(int argc, char *argv[]) {
         // Count the group member as seen
         group_members_seen++;
     
-        // Get length of line
+        // Get length of line 
         line_size = strlen(line);
         // Zero out priorities array
         bzero(priorities, 52 * sizeof(int));
@@ -53,7 +54,7 @@ int main(int argc, char *argv[]) {
             }
         }
         // Loop over second half again to add then to the line's overall priorities
-        for (int i = (line_size / 2); i < line_size; i++) {
+        for (int i = (line_size / 2); (i < line_size) && (line[i] != '\n'); i++) {
             priority = get_priority(line[i]);
             priorities[priority] += 1;
         }
@@ -79,6 +80,7 @@ int main(int argc, char *argv[]) {
         }
     }
 
+    free(line);
     fclose(input);
 
     printf("Common compartment total is: %d\n", total);
@@ -90,11 +92,163 @@ int main(int argc, char *argv[]) {
 int get_priority(char c) {
     int priority = 0;
 
-    // If the char is a lowercase letter
-    if (isupper(c) == 0) {
-        priority = c - 'a';
-    } else {
-        priority = c - 'A' + 26;
+    switch (c) {
+        case 'a':
+            priority = 0;
+            break;
+        case 'b':
+            priority = 1;
+            break;
+        case 'c':
+            priority = 2;
+            break;
+        case 'd':
+            priority = 3;
+            break;
+        case 'e':
+            priority = 4;
+            break;
+        case 'f':
+            priority = 5;
+            break;
+        case 'g':
+            priority = 6;
+            break;
+        case 'h':
+            priority = 7;
+            break;
+        case 'i':
+            priority = 8;
+            break;
+        case 'j':
+            priority = 9;
+            break;
+        case 'k':
+            priority = 10;
+            break;
+        case 'l':
+            priority = 11;
+            break;
+        case 'm':
+            priority = 12;
+            break;
+        case 'n':
+            priority = 13;
+            break;
+        case 'o':
+            priority = 14;
+            break;
+        case 'p':
+            priority = 15;
+            break;
+        case 'q':
+            priority = 16;
+            break;
+        case 'r':
+            priority = 17;
+            break;
+        case 's':
+            priority = 18;
+            break;
+        case 't':
+            priority = 19;
+            break;
+        case 'u':
+            priority = 20;
+            break;
+        case 'v':
+            priority = 21;
+            break;
+        case 'w':
+            priority = 22;
+            break;
+        case 'x':
+            priority = 23;
+            break;
+        case 'y':
+            priority = 24;
+            break;
+        case 'z':
+            priority = 25;
+            break;
+        case 'A':
+            priority = 26;
+            break;
+        case 'B':
+            priority = 27;
+            break;
+        case 'C':
+            priority = 28;
+            break;
+        case 'D':
+            priority = 29;
+            break;
+        case 'E':
+            priority = 30;
+            break;
+        case 'F':
+            priority = 31;
+            break;
+        case 'G':
+            priority = 32;
+            break;
+        case 'H':
+            priority = 33;
+            break;
+        case 'I':
+            priority = 34;
+            break;
+        case 'J':
+            priority = 35;
+            break;
+        case 'K':
+            priority = 36;
+            break;
+        case 'L':
+            priority = 37;
+            break;
+        case 'M':
+            priority = 38;
+            break;
+        case 'N':
+            priority = 39;
+            break;
+        case 'O':
+            priority = 40;
+            break;
+        case 'P':
+            priority = 41;
+            break;
+        case 'Q':
+            priority = 42;
+            break;
+        case 'R':
+            priority = 43;
+            break;
+        case 'S':
+            priority = 44;
+            break;
+        case 'T':
+            priority = 45;
+            break;
+        case 'U':
+            priority = 46;
+            break;
+        case 'V':
+            priority = 47;
+            break;
+        case 'W':
+            priority = 48;
+            break;
+        case 'X':
+            priority = 49;
+            break;
+        case 'Y':
+            priority = 50;
+            break;
+        case 'Z':
+            priority = 51;
+            break;
     }
 
     return priority;

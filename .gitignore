@@ -5,3 +5,8 @@
 #### VSCode files
 
 .vscode/
+
+#### Rust target files
+
+target/
+
